@@ -3,28 +3,32 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Milestone2_Deliverable1">
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Milestone2">
     <property environment="env"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
-    <path id="Milestone2_Deliverable1.classpath">
+    <path id="Milestone2.classpath">
         <pathelement location="bin"/>
         <pathelement location="APIs/commons-io-2.6.jar"/>
         <pathelement location="APIs/org.eclipse.jgit-5.7.0.202003110725-r.jar"/>
         <pathelement location="APIs/org.json_1.0.0.v201011060100.jar"/>
         <pathelement location="APIs/slf4j-api-1.7.9.jar"/>
         <pathelement location="APIs/slf4j-jdk14-1.7.9.jar"/>
+        <pathelement location="APIs/SMOTE.jar"/>
+        <pathelement location="APIs/weka.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
+                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="APIs">
+                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -40,7 +44,7 @@
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
             <src path="APIs"/>
-            <classpath refid="Milestone2_Deliverable1.classpath"/>
+            <classpath refid="Milestone2.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -57,9 +61,9 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="Main">
-        <java classname="logic.Main" failonerror="true" fork="yes">
-            <classpath refid="Milestone2_Deliverable1.classpath"/>
+    <target name="Main (1)">
+        <java classname="boundary.Main" failonerror="true" fork="yes">
+            <classpath refid="Milestone2.classpath"/>
         </java>
     </target>
 </project>

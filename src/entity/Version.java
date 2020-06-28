@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import logic.FileLogger;
+import util.FileLogger;
 
 //Classe che memorizza informazioni sulle versioni
 public class Version 
@@ -27,12 +27,13 @@ public class Version
 	
 	public String printVersion(){
 		String print = "";
-		print += "Versione #" + this.index + "[" + this.versionName + "]:\n";
+		StringBuilder sb = new StringBuilder(print);
+		sb.append("Versione #" + this.index + "[" + this.versionName + "]:\n");
 		for(VersionFile filePath : filesPath)
-			print += " |\t" + filePath.getFilePath() + "\n";
+			sb.append(" |\t" + filePath.getFilePath() + "\n");
 		
-		print += " +--------------------------------------------------------------------------------------";
-		return print;
+		sb.append(" +--------------------------------------------------------------------------------------");
+		return sb.toString();
 	}
 	
 	

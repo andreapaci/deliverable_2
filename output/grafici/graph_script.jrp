@@ -1,0 +1,171 @@
+Graph Builder(
+	Size( 1471, 883 ),
+	Title Fill Color( "Yellow" ),
+	Title Frame Color( "Yellow" ),
+	Level Fill Color( {233, 227, 107} ),
+	Level Frame Color( "Yellow" ),
+	Variables(
+		X( :Feature_Selection ),
+		Y( :ROC_Area ),
+		Group X( :Classifier ),
+		Group Y( :Balancing ),
+		Color( :Feature_Selection )
+	),
+	Elements(
+		Box Plot( X, Y, Legend( 2 ), Outliers( 0 ), Name( "5 Number Summary" )(1) )
+	)
+);
+Graph Builder(
+	Size( 1471, 883 ),
+	Title Fill Color( "Medium Light Blue" ),
+	Title Frame Color( "Medium Light Blue" ),
+	Level Fill Color( {149, 196, 255} ),
+	Level Frame Color( "Medium Light Blue" ),
+	Variables(
+		X( :Feature_Selection ),
+		Y( :Kappa ),
+		Group X( :Classifier ),
+		Group Y( :Balancing ),
+		Color( :Feature_Selection )
+	),
+	Elements(
+		Box Plot(
+			X,
+			Y,
+			Legend( 2 ),
+			Outliers( 0 ),
+			Box Type( "Quantile" ),
+			Name( "5 Number Summary" )(1)
+		)
+	)
+);
+Graph Builder(
+	Size( 1539, 883 ),
+	Title Fill Color( "Medium Light Purple" ),
+	Title Frame Color( "Medium Light Purple" ),
+	Level Fill Color( {218, 169, 255} ),
+	Level Frame Color( "Medium Light Purple" ),
+	Variables(
+		X( :Feature_Selection ),
+		Y( :Precision ),
+		Y( :Recall, Position( 1 ) ),
+		Y( :Kappa, Position( 1 ) ),
+		Group X( :Classifier ),
+		Group Y( :Balancing )
+	),
+	Elements( Box Plot( X, Y( 1 ), Y( 2 ), Y( 3 ), Legend( 4 ) ) ),
+	SendToReport(
+		Dispatch(
+			{},
+			"graph title",
+			TextEditBox,
+			{Set Text(
+				"Precision-Recall-Kappa  altro rispetto a Feature_Selection"
+			)}
+		),
+		Dispatch(
+			{},
+			"Y title",
+			TextEditBox,
+			{Set Text( "Precision-Recall-Kappa" )}
+		)
+	)
+);
+Graph Builder(
+	Size( 1471, 883 ),
+	Grid Color( "Medium Light Gray" ),
+	Title Fill Color( {87, 174, 0} ),
+	Title Frame Color( {87, 174, 0} ),
+	Level Fill Color( {154, 206, 102} ),
+	Level Frame Color( {87, 174, 0} ),
+	Graph Spacing( 0 ),
+	Spacing Borders( 1 ),
+	Variables(
+		X(
+			:Feature_Selection,
+			Order By( :Precision, Ascending, Order Statistic( "Mean" ) )
+		),
+		Y( :Precision ),
+		Group X( :Classifier ),
+		Group Y( :Balancing ),
+		Color( :Feature_Selection )
+	),
+	Elements( Box Plot( X, Y, Legend( 14 ), Name( "5 Number Summary" )(1) ) ),
+	SendToReport(
+		Dispatch(
+			{},
+			"Feature_Selection",
+			ScaleBox,
+			{Min( -0.363044764346282 ), Max( 2.63695523565371 ), Inc( 1 ),
+			Minor Ticks( 0 )}
+		),
+		Dispatch(
+			{},
+			"Precision",
+			ScaleBox,
+			{Min( -0.0690512567275147 ), Max( 1.05614874327249 ), Inc( 0.2 ),
+			Minor Ticks( 1 )}
+		),
+		Dispatch( {}, "400", LegendBox, {Set Title( "" )} )
+	)
+);
+Graph Builder(
+	Size( 1471, 883 ),
+	Title Fill Color( "Red" ),
+	Title Frame Color( "Red" ),
+	Level Fill Color( {246, 132, 144} ),
+	Level Frame Color( "Red" ),
+	Variables(
+		X( :Feature_Selection ),
+		Y( :Recall ),
+		Group X( :Classifier ),
+		Group Y( :Balancing ),
+		Color( :Feature_Selection )
+	),
+	Elements( Box Plot( X, Y, Legend( 2 ), Name( "5 Number Summary" )(1) ) )
+);
+Graph Builder(
+	Size( 1555, 883 ),
+	Title Fill Color( "BlueGreen" ),
+	Title Frame Color( "BlueGreen" ),
+	Level Fill Color( {104, 221, 189} ),
+	Level Frame Color( "BlueGreen" ),
+	Variables(
+		X( :Classifier ),
+		Y( :TP ),
+		Y( :FP, Position( 1 ) ),
+		Y( :TN, Position( 1 ) ),
+		Y( :FN, Position( 1 ) ),
+		Group X( :Feature_Selection, Size( 33 ) ),
+		Group Y( :Balancing, Size( 36 ) )
+	),
+	Elements(
+		Bar(
+			X,
+			Y( 1 ),
+			Y( 2 ),
+			Y( 3 ),
+			Y( 4 ),
+			Legend( 2 ),
+			Label( "Label by Value" )
+		)
+	),
+	SendToReport(
+		Dispatch(
+			{},
+			"400",
+			ScaleBox,
+			{Legend Model(
+				2,
+				Properties( 3, {Fill Color( 9 )}, Item ID( "Media(FN)", 1 ) )
+			)}
+		),
+		Dispatch(
+			{},
+			"graph title",
+			TextEditBox,
+			{Set Text( "Media(TP,FP,TN,FN) rispetto a Classifier" )}
+		),
+		Dispatch( {}, "Y title", TextEditBox, {Set Text( "TP,FP,TN,FN " )} )
+	)
+);

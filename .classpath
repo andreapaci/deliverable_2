@@ -8,5 +8,7 @@
 	<classpathentry exported="true" kind="lib" path="APIs/org.json_1.0.0.v201011060100.jar"/>
 	<classpathentry exported="true" kind="lib" path="APIs/slf4j-api-1.7.9.jar"/>
 	<classpathentry exported="true" kind="lib" path="APIs/slf4j-jdk14-1.7.9.jar"/>
+	<classpathentry exported="true" kind="lib" path="APIs/SMOTE.jar"/>
+	<classpathentry exported="true" kind="lib" path="APIs/weka.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

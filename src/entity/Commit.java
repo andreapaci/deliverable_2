@@ -2,11 +2,9 @@ package entity;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.eclipse.jgit.diff.DiffEntry.ChangeType;
 
 //Classe che tiene conto dell'ID del ticket e la data del commit
 public class Commit 
@@ -67,40 +65,20 @@ public class Commit
 		return this.message;
 	}
 	
-	public String printCommitValues(boolean printFiles) {
-		String print;
-		print = "Commit: " + this.date.toString() + "\n" + this.message + "\n";
-		print += "Versione: " + version.getVersionName() + "\n";
-		print += " |\tTicket relativi: \n";
+	public String printCommitValues() {
+		String print = "Commit: " + this.date.toString() + "\n" + this.message + "\n";
+		StringBuilder sb = new StringBuilder(print);
+
+		sb.append("Versione: " + version.getVersionName() + "\n");
+		sb.append(" |\tTicket relativi: \n");
 		if(this.tickets != null)
 			for(BugTicket ticket : this.tickets)
-				print += " |\t |\tTicket: " + ticket.getTicketId() + "\n";
+				sb.append(" |\t |\tTicket: " + ticket.getTicketId() + "\n");
 		else
-			print += " |\t |\tNessun ticket relativo\n";
-		if(printFiles) {
-			
-			print += " |\tFile toccati: \n";
+			sb.append(" |\t |\tNessun ticket relativo\n");
+		sb.append(" +-----------------------------------------------------------------------------\n\n");
 		
-			if(this.fileTouched != null)
-				for(CommitFileOperation fileTouched : this.fileTouched){	
-					if(fileTouched.getOpType() == ChangeType.DELETE)
-						print += " |\t |\tFile: [" + fileTouched.getOpType().toString() + "]:" + fileTouched.getOldPath() + "\n";
-					else if(fileTouched.getOpType() == ChangeType.RENAME)
-						print += " |\t |\tFile: [" + fileTouched.getOpType().toString() + "]:" + fileTouched.getFilePath() + "\n |\t |\t\t From: " + fileTouched.getOldPath() + "\n";
-					else
-						print += " |\t |\tFile: [" + fileTouched.getOpType().toString() + "]:" + fileTouched.getFilePath() + "\n";
-					
-					print += " |\t |\tAuthor: " + fileTouched.getAuthor() + "\n";
-					print += " |\t |\tLoc Touched: " + fileTouched.getLocTouched() + "\n";
-					print += " |\t |\tLoc Added: " + fileTouched.getLocAdded() + "\n";
-				}
-			else
-				print += " |\t |\tNessun file relativo\n";
-		
-		}
-		print += " +-----------------------------------------------------------------------------\n\n";
-		
-		return print;
+		return sb.toString();
 	}
 
 

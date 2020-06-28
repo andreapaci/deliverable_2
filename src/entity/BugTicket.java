@@ -2,7 +2,8 @@ package entity;
 
 import java.time.LocalDate;
 
-public class BugTicket 
+//Classe che memorizza informazioni sui ticket, incluso di AV e FV
+public class BugTicket
 {
 	private String ticketId;
 	private LocalDate date;
@@ -19,7 +20,7 @@ public class BugTicket
 		this.openingVersion = null;
 	}
 
-	public boolean hasAV() {
+	public boolean hasAVFV() {
 		return (affectedVersions != null && fixedVersions != null);
 	}
 	
@@ -55,5 +56,9 @@ public class BugTicket
 	public void setFixedVersion(String[] fixedVersion) {
 		this.fixedVersions = fixedVersion;
 	}
+
+
+	
+	
 
 }

@@ -1,0 +1,211 @@
+Logger inizializzato.
+Walk #1
+ +-Defective "true" index: 1
+ +-Number of features: 16
+ +-Class Index: Defective [15]
+ +-Classifier: Random Forest
+ +-Balancing: No sampling
+ +-Feature: No selection
+ +-Evaluation results:
+ |
+ +----Precision: NaN
+ |
+ +----TP: 0.0 FP: 0.0
+ |
+ +----TN: 537.0 FN: 13.0
+ |
+ +----Area under ROC: 0.7034808766652342
+ |
+ +----Kappa: 0.0
+ |
+ +----Error rate: 0.023636363636363636
+Walk non valido
+
+
+
+Walk #1
+ +-Defective "true" index: 1
+ +-Number of features: 16
+ +-Number of filtered features: 16
+ +----Features: Version; Size; Age; Number_revision; Number_Authors; Loc_Touched; Loc_Added; Max_Loc_Added; Avg_Loc_Added; Change_Set_size; Max_ChgSetSize; Avg_ChgSetSize; Churn; Max_Churn; Avg_Churn; Defective; 
+ +-Filtered Class Index: Defective [15]
+ +-Class Index: Defective [15]
+ +-Classifier: Random Forest
+ +-Balancing: Oversampling
+ +-Feature: No selection
+ +-Evaluation results:
+ |
+ +----Precision: NaN
+ |
+ +----TP: 0.0 FP: 0.0
+ |
+ +----TN: 537.0 FN: 13.0
+ |
+ +----Area under ROC: 0.6898008881249105
+ |
+ +----Kappa: 0.0
+ |
+ +----Error rate: 0.023636363636363636
+Walk non valido
+
+
+
+Walk #1
+ +-Defective "true" index: 1
+ +-Number of features: 16
+ +-Number of filtered features: 16
+ +----Features: Version; Size; Age; Number_revision; Number_Authors; Loc_Touched; Loc_Added; Max_Loc_Added; Avg_Loc_Added; Change_Set_size; Max_ChgSetSize; Avg_ChgSetSize; Churn; Max_Churn; Avg_Churn; Defective; 
+ +-Filtered Class Index: Defective [15]
+ +-Class Index: Defective [15]
+ +-Classifier: Random Forest
+ +-Balancing: Undersampling
+ +-Feature: No selection
+ +-Evaluation results:
+ |
+ +----Precision: NaN
+ |
+ +----TP: 0.0 FP: 0.0
+ |
+ +----TN: 537.0 FN: 13.0
+ |
+ +----Area under ROC: 0.6057871365133934
+ |
+ +----Kappa: 0.0
+ |
+ +----Error rate: 0.023636363636363636
+Walk non valido
+
+
+
+Walk #1
+ +-Defective "true" index: 1
+ +-Number of features: 16
+ +-Number of filtered features: 16
+ +----Features: Version; Size; Age; Number_revision; Number_Authors; Loc_Touched; Loc_Added; Max_Loc_Added; Avg_Loc_Added; Change_Set_size; Max_ChgSetSize; Avg_ChgSetSize; Churn; Max_Churn; Avg_Churn; Defective; 
+ +-Filtered Class Index: Defective [15]
+ +-Class Index: Defective [15]
+ +-Classifier: Random Forest
+ +-Balancing: SMOTE
+ +-Feature: No selection
+ +-Evaluation results:
+ |
+ +----Precision: NaN
+ |
+ +----TP: 0.0 FP: 0.0
+ |
+ +----TN: 537.0 FN: 13.0
+ |
+ +----Area under ROC: 0.7047700902449506
+ |
+ +----Kappa: 0.0
+ |
+ +----Error rate: 0.023636363636363636
+Walk non valido
+
+
+
+Walk #1
+ +-Defective "true" index: 1
+ +-Number of features: 16
+ +-Class Index: Defective [15]
+ +-Classifier: Random Forest
+ +-Balancing: No sampling
+ +-Feature: CFS con Best First
+ +-Evaluation results:
+ |
+ +----Precision: NaN
+ |
+ +----TP: 0.0 FP: 0.0
+ |
+ +----TN: 537.0 FN: 13.0
+ |
+ +----Area under ROC: 0.49813780260707635
+ |
+ +----Kappa: 0.0
+ |
+ +----Error rate: 0.023636363636363636
+Walk non valido
+
+
+
+Walk #1
+ +-Defective "true" index: 1
+ +-Number of features: 16
+ +-Number of filtered features: 3
+ +----Features: Number_revision; Avg_ChgSetSize; Defective; 
+ +-Filtered Class Index: Defective [2]
+ +-Class Index: Defective [15]
+ +-Classifier: Random Forest
+ +-Balancing: Oversampling
+ +-Feature: CFS con Best First
+ +-Evaluation results:
+ |
+ +----Precision: NaN
+ |
+ +----TP: 0.0 FP: 0.0
+ |
+ +----TN: 537.0 FN: 13.0
+ |
+ +----Area under ROC: 0.5
+ |
+ +----Kappa: 0.0
+ |
+ +----Error rate: 0.023636363636363636
+Walk non valido
+
+
+
+Walk #1
+ +-Defective "true" index: 1
+ +-Number of features: 16
+ +-Number of filtered features: 3
+ +----Features: Number_revision; Avg_ChgSetSize; Defective; 
+ +-Filtered Class Index: Defective [2]
+ +-Class Index: Defective [15]
+ +-Classifier: Random Forest
+ +-Balancing: Undersampling
+ +-Feature: CFS con Best First
+ +-Evaluation results:
+ |
+ +----Precision: NaN
+ |
+ +----TP: 0.0 FP: 0.0
+ |
+ +----TN: 537.0 FN: 13.0
+ |
+ +----Area under ROC: 0.48417132216014896
+ |
+ +----Kappa: 0.0
+ |
+ +----Error rate: 0.023636363636363636
+Walk non valido
+
+
+
+Walk #1
+ +-Defective "true" index: 1
+ +-Number of features: 16
+ +-Number of filtered features: 3
+ +----Features: Number_revision; Avg_ChgSetSize; Defective; 
+ +-Filtered Class Index: Defective [2]
+ +-Class Index: Defective [15]
+ +-Classifier: Random Forest
+ +-Balancing: SMOTE
+ +-Feature: CFS con Best First
+ +-Evaluation results:
+ |
+ +----Precision: NaN
+ |
+ +----TP: 0.0 FP: 0.0
+ |
+ +----TN: 537.0 FN: 13.0
+ |
+ +----Area under ROC: 0.49813780260707635
+ |
+ +----Kappa: 0.0
+ |
+ +----Error rate: 0.023636363636363636
+Walk non valido
+
+
+
