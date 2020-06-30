@@ -71,7 +71,8 @@ public class DefectHandler
 
 
 		// Vado ad applicare la defectiveness ai file nelle versioni [iv, fv)
-		applyDefectiveness(fileOps, commits, versions, iv, fv);
+		if(iv != -1)
+			applyDefectiveness(fileOps, commits, versions, iv, fv);
 		
 		
 		

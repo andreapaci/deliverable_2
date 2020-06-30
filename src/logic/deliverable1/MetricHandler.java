@@ -52,6 +52,7 @@ public class MetricHandler {
 
 					age = caluclateAge(commit, filesPath, age);
 
+					//Viene impiegato un array per il passaggio di parametri per evitare un numero troppo grande di input (Sonar Cloud impone numero parametri <= 7)
 					int[] metrics = {locTouched, locAdded, maxLocAdded, chgSetSize, maxChgSetSize, churn, maxChurn, numberRevision};
 					
 					metrics = calculateMetrics(commit, version, filesPath, metrics, authors);

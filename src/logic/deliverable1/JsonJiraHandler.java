@@ -283,10 +283,8 @@ public class JsonJiraHandler {
 		FileLogger.getLogger().info("\t +--------------------------------------------");
 		
 		
-		
-		
-		
 		bugTickets.add(new BugTicket(ticketId, versions, fixedVersions, date));
+		
 	}
 
 	// Legge tutto il contenuto di un Buffer
