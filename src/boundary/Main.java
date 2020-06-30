@@ -12,11 +12,11 @@ public class Main {
 		ControllerDeliverable1 controllerDel1 = ControllerDeliverable1.getIstance();
 		ControllerDeliverable2 controllerDel2 = ControllerDeliverable2.getIstance();
 		
-		//Calcolo delle metriche e della defectiveness come specificato dalla prima deliverable
+		//Calcolo delle metriche e della defectiveness come specificato dalla prima parte del deliverable
 		controllerDel1.run("BOOKKEEPER", "https://github.com/apache/bookkeeper");
 		controllerDel1.run("SYNCOPE", "https://github.com/apache/syncope");
 		
-		//Applicazione di modelli di ML come specificato nella seconda deliverable
+		//Applicazione di modelli di ML come specificato nella seconda parte del deliverable
 		controllerDel2.run("BOOKKEEPER");
 		controllerDel2.run("SYNCOPE");
 		
